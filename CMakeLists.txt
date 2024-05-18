@@ -19,6 +19,17 @@ add_library(${project_name}-lib
         src/service/EOP_feedback_FeedbackService.cpp
         src/service/EOP_feedback_FeedbackService.hpp
 
+        src/common_int/feedback/EOP_feedback_FeedbackService.c
+        src/common_int/feedback/EOP_feedback_FeedbackService.cpp
+        src/common_int/feedback/EOP_feedback_FeedbackService.h
+        src/common_int/feedback/EOP_feedback_FeedbackService.hpp
+        
+        src/common_int/feedback_notification/EOP_feedback_FeedbackNotificationService.c
+        src/common_int/feedback_notification/EOP_feedback_FeedbackNotificationService.cpp
+        src/common_int/feedback_notification/EOP_feedback_FeedbackNotificationService.h
+        src/common_int/feedback_notification/EOP_feedback_FeedbackNotificationService.hpp
+        
+        
         src/dto/ConfigDto.hpp
         src/dto/PageDto.hpp
         src/dto/StatusDto.hpp

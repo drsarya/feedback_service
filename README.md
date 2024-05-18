@@ -1,20 +1,7 @@
-# example-postgresql [![Build Status](https://dev.azure.com/lganzzzo/lganzzzo/_apis/build/status/oatpp.example-postgresql?branchName=master)](https://dev.azure.com/lganzzzo/lganzzzo/_build/latest?definitionId=17&branchName=master)
+# Сервис обратной связи для курса
 
-A complete example of a "CRUD" service (UserService) built with Oat++ and using oatpp ORM with PostgreSQL.
-
-
-In this example:
-
-- How to create CRUD endpoints.
-- How to use [oatpp ORM](https://oatpp.io/docs/components/orm/) - PostgreSQL example.
-- How to document API with Swagger-UI and OpenApi 3.0.0.
-
-More about Oat++:
-
-- [Oat++ Website](https://oatpp.io/)
-- [Oat++ Github Repository](https://github.com/oatpp/oatpp)
-- [Get Started](https://oatpp.io/docs/start)
-
+Предоставляет АПИ по созданию обратной связи
+ 
 ## Overview
 
 This project is using the following oatpp modules:
@@ -57,6 +44,7 @@ This project is using the following oatpp modules:
 - This example also requires the PostgreSQL package installed.
    - On Alpine `$ apk add postgresql-dev`
    - On Ubuntu `$ apt-get install postgresql-server-dev-all`
+   - On Windows : `set(PostgreSQL_INCLUDE_DIR "E:\\program\\Postgresql\\include")`  in **utility/tmp/oatpp-postgresql/CMakeList.txt**
    
    For more info see [oatpp-postgresql/README.md](https://github.com/oatpp/oatpp-postgresql/blob/master/README.md)
 - `oatpp`, `oatpp-swagger` and `oatpp-postgresql` modules installed. You may run `utility/install-oatpp-modules.sh` 
@@ -66,7 +54,7 @@ script to install required oatpp modules.
 $ mkdir build && cd build
 $ cmake ..
 $ make 
-$ ./example-postgresql-exe  # - run application.
+$ ./EOP_feedback-exe  # - run application.
 ```
 
 *PostgreSQL is expected running as for `dev` config profile*
@@ -76,8 +64,8 @@ $ ./example-postgresql-exe  # - run application.
 #### Dockerfile
 
 ```
-$ docker build -t example-postgresql .
-$ docker run -p 8000:8000 -e CONFIG_PROFILE='dev' -t example-postgresql
+$ docker build -t eop_feedback .
+$ docker run -p 8000:8000 -e CONFIG_PROFILE='dev' -t eop_feedback
 ```
 
 #### docker-compose
