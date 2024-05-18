@@ -2,17 +2,26 @@ FROM lganzzzo/alpine-cmake:latest
 
 RUN apk add postgresql-dev
 
-ADD . /service
+RUN apk update && apk upgrade
+
+RUN apk add g++
+
+RUN apk add git
+RUN apk add make
+RUN apk add cmake
+
+COPY  . /service
 
 WORKDIR /service/utility
 
-RUN ./install-oatpp-modules.sh
+RUN ls /service/utility/tmp
+RUN /service/utility/install-oatpp-modules.sh
 
 WORKDIR /service/build
 
 RUN cmake ..
-RUN make
+RUN cmake --build .
 
 EXPOSE 8000 8000
 
-ENTRYPOINT ["./EOP_feedback-exe"]
+ENTRYPOINT ["./eop_feedback-exe"]

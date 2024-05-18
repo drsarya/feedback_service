@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
-set(project_name EOP_feedback)
+set(project_name eop_feedback)
 
 project(${project_name})
 

@@ -18,22 +18,21 @@ function install_module () {
 
 BUILD_TYPE=$1
 MODULE_NAME=$2
-NPROC=$(nproc)
 
-if [ -z "$NPROC" ]; then
-    NPROC=1
-fi
 
-echo "\n\nINSTALLING MODULE '$MODULE_NAME' ($BUILD_TYPE) using $NPROC threads ...\n\n"
+
+echo "\n\nINSTALLING MODULE '$MODULE_NAME' ($BUILD_TYPE)  \n\n"
 
 git clone --depth=1 https://github.com/oatpp/$MODULE_NAME
-
 cd $MODULE_NAME
+git fetch --tags
+git checkout 1.3.0-latest --
+
 mkdir build
 cd build
 
 cmake -DOATPP_DISABLE_ENV_OBJECT_COUNTERS=ON -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DOATPP_BUILD_TESTS=OFF ..
-make install -j $NPROC
+cmake --build .   --target install
 
 cd ../../
 
@@ -41,24 +40,26 @@ cd ../../
 
 
 
+
 ##########################################################
 
-function install_module2 () {
+function install_module_oatpp_postgresql () {
 
 BUILD_TYPE=$1
 MODULE_NAME=$2
-NPROC=$(nproc)
 
 if [ -z "$NPROC" ]; then
     NPROC=1
 fi
 
-echo "\n\nINSTALLING MODULE '$MODULE_NAME' ($BUILD_TYPE) using $NPROC threads ...\n\n"
+echo "\n\nINSTALLING MODULE '$MODULE_NAME' ($BUILD_TYPE)  \n\n"
 
-git clone --depth=1 https://github.com/oatpp/$MODULE_NAME
+git clone --depth=1 https://github.com/oatpp/oatpp-postgresql
 cd $MODULE_NAME
 git fetch --tags
-git checkout 1.3.0-latest --
+git checkout 1.3.0 --
+
+
 mkdir build
 cd build
 
@@ -66,17 +67,16 @@ cd build
 ## Flag '-DOATPP_SQLITE_AMALGAMATION=ON' used by oatpp-postgresql module only ##
 ############################################################################
 cmake -DOATPP_DISABLE_ENV_OBJECT_COUNTERS=ON -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DOATPP_BUILD_TESTS=OFF ..
-make install -j $NPROC
-#
-#cd ../../
+cmake --build .   --target install
+
 
 }
 
 ##########################################################
 
-install_module2 $BUILD_TYPE oatpp
+install_module $BUILD_TYPE oatpp
 install_module $BUILD_TYPE oatpp-swagger
-install_module $BUILD_TYPE oatpp-postgresql
+install_module_oatpp_postgresql $BUILD_TYPE oatpp-postgresql
+
 
 cd ../
-rm -rf tmp
