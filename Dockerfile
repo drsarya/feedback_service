@@ -1,26 +1,21 @@
-FROM lganzzzo/alpine-cmake:latest
-
-RUN apk add postgresql-dev
-
+FROM alpine:latest
 RUN apk update && apk upgrade
-
+RUN apk add postgresql-dev
 RUN apk add g++
-
 RUN apk add git
 RUN apk add make
 RUN apk add cmake
 
-COPY  . /service
+ADD . /service
 
 WORKDIR /service/utility
 
-RUN ls /service/utility/tmp
-RUN /service/utility/install-oatpp-modules.sh
+RUN ./install-oatpp-modules.sh Release
 
 WORKDIR /service/build
 
 RUN cmake ..
-RUN cmake --build .
+RUN make
 
 EXPOSE 8000 8000
 

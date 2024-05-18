@@ -32,7 +32,7 @@ mkdir build
 cd build
 
 cmake -DOATPP_DISABLE_ENV_OBJECT_COUNTERS=ON -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DOATPP_BUILD_TESTS=OFF ..
-cmake --build .   --target install
+make install -j 1
 
 cd ../../
 
@@ -48,9 +48,6 @@ function install_module_oatpp_postgresql () {
 BUILD_TYPE=$1
 MODULE_NAME=$2
 
-if [ -z "$NPROC" ]; then
-    NPROC=1
-fi
 
 echo "\n\nINSTALLING MODULE '$MODULE_NAME' ($BUILD_TYPE)  \n\n"
 
@@ -67,8 +64,8 @@ cd build
 ## Flag '-DOATPP_SQLITE_AMALGAMATION=ON' used by oatpp-postgresql module only ##
 ############################################################################
 cmake -DOATPP_DISABLE_ENV_OBJECT_COUNTERS=ON -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DOATPP_BUILD_TESTS=OFF ..
-cmake --build .   --target install
-
+make install -j 1
+cd ../../
 
 }
 
