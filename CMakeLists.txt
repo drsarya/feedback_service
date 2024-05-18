@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
-set(project_name example-postgresql) ## rename your project here
+set(project_name EOP_feedback)
 
 project(${project_name})
 

@@ -68,7 +68,7 @@ values (1, 'Не прочитан'),
 
 create table feedback.feedback_notification
 (
-    id                  integer primary key,
+    id                  serial primary key,
     feedback_id         integer                                                   not null references feedback.feedback (id) on delete cascade,
     user_id             uuid                                                      not null,
     description         varchar(100)                                              not null,
@@ -84,7 +84,7 @@ on column feedback.feedback_notification.feedback_id is 'Идентификат�
 comment
 on column feedback.feedback_notification.user_id is 'Идентификатор пользователя для уведомления';
 comment
-on column feedback.feedback_notification.description is 'Текст уведомления ';
+on column feedback.feedback_notification.description is 'Текст уведомления';
 comment
 on column feedback.feedback_notification.notification_status is 'Статус прочтения уведомления';
 comment

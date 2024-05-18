@@ -28,26 +28,25 @@ public:
 
 	QUERY(createNotificationFeedback,
 		"insert into  feedback.feedback_notification (feedback_id, user_id, description) values "
-		"(:notification.feedbackId, uuid(:notification.userId), :notification.description ) RETURNING id, feedback_id as feedbackId,user_id as userId, description, notification_status as notificationStatus, creation_date as creationDate;",
-		PARAM(oatpp::Object<FeedbackNotificationDto>, notification))
+		"(:notification.feedbackId, uuid(:notification.userId), :notification.description ) RETURNING <!! id, feedback_id as \"feedbackId\", CAST(user_id AS text) as \"userId\", description, notification_status as \"notificationStatus\", CAST(creation_date AS text) as \"creationDate\" !!>;",
+		PREPARE(true), PARAM(oatpp::Object<FeedbackNotificationDto>, notification))
 
 
 		QUERY(getNotificationById,
-			"SELECT  id, feedback_id as feedbackId,user_id as userId, description, notification_status as notificationStatus, creation_date as creationDate"
+			"SELECT  <!! id, feedback_id as \"feedbackId\", CAST(user_id AS text) as \"userId\", description, notification_status as \"notificationStatus\", CAST(creation_date AS text) as \"creationDate\" !!>"
 			" FROM  feedback.feedback_notification "
 			"WHERE  id=:id;",
-			PARAM(oatpp::Int32, id))
+			PREPARE(true),  PARAM(oatpp::Int32, id))
 
 		QUERY(readNotificationFeedback,
 			"UPDATE  feedback.feedback_notification "
 			"SET notification_status = 2 "
 			"WHERE id = :id;",
-			PARAM(oatpp::Int32, id))
+			PREPARE(true),  PARAM(oatpp::Int32, id))
 
 		QUERY(getNotificationsForUserId,
-			"SELECT id, feedback_id as feedbackId,user_id as userId, description, notification_status as notificationStatus, creation_date as creationDate  FROM feedback.feedback_notification "
-			"WHERE  user_id=:userId and notification_status = 1 order by creation_date desc;",
-			PARAM(oatpp::String, userId))
+			"SELECT <!! id, feedback_id as \"feedbackId\", CAST(user_id AS text) as \"userId\", description, notification_status as \"notificationStatus\", CAST(creation_date AS text) as \"creationDate\" !!> FROM  feedback.feedback_notification WHERE  user_id = uuid(:userId) and notification_status = 1 order by creation_date desc;",
+			PREPARE(true),  PARAM(oatpp::String, userId))
 
 		QUERY(deleteReadNotifications,
 			"delete FROM feedback.feedback_notification WHERE notification_status = 2;")
