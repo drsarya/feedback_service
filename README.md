@@ -4,71 +4,68 @@
  
 ## Overview
 
-This project is using the following oatpp modules:
+Проект содержит следующие зависимости:
 
 - [oatpp](https://github.com/oatpp/oatpp) 
 - [oatpp-swagger](https://github.com/oatpp/oatpp-swagger)
 - [oatpp-postgresql](https://github.com/oatpp/oatpp-postgresql)
 
-### Project layout
+### Структура проекта
 
 ```
 |- CMakeLists.txt                        // projects CMakeLists.txt
 |- src/
 |    |
-|    |- controller/                      // Folder containing Controller where all endpoints are declared
-|    |- db/                              // Folder containing the database client
-|    |- dto/                             // DTOs are declared here
-|    |- service/                         // Service business logic classes (UserService)
-|    |- ServiceComponent.hpp             // Service configuration (port, ObjectMapper, Database)
-|    |- SwaggerComponent.hpp             // Configuration for swagger-ui
-|    |- AppComponent.hpp                 // Service configuration is loaded here
-|    |- DatabaseComponent.hpp            // Database config
+|    |- common_int/                      // Публичные интферфейсы для Си
+|    |- controller/                      // Контроллеры для взаимодействия по Rest api
+|    |- db/                              // Компоненты для взаимодействия с БД
+|    |- dto/                             // ДТО
+|    |- service/                         // Сервисы для взаимодействия с БД
+|    |- ServiceComponent.hpp             // Конфигурация компонентов (port, ObjectMapper, Database)
+|    |- SwaggerComponent.hpp             // Конфигурация для swagger-ui
+|    |- AppComponent.hpp                 // Конфигурация приложения (controllers)
+|    |- DatabaseComponent.hpp            // Конфигурация БД
 |    |- App.cpp                          // main() is here
 |    
-|- test/                                 // test folder
-|- utility/install-oatpp-modules.sh      // utility script to install required oatpp-modules.
-|- resources/config.json                 // configuration file with configuration profiles
-|- Dockerfile                            // Dockerfile
-|- docker-compose.yaml                   // Docker-compose with this service and postgresql
+|- utility/install-oatpp-modules.sh      // скрпит для скачивания библиотек .
+|- resources/config.json                 // конфигурация подключения к БД, порты, хосты
+|- Dockerfile                            // Dockerfile - сборка сервиса
+|- docker-compose.yaml                   // Docker-compose - сборка сервиса и создание БД
 ```
 
 ---
 
-## Build and Run
+## Сборка и запуск
 
-### Using CMake
+### С использованием CMake
 
-**Requires** 
+**Требования** 
 
-- This example also requires the PostgreSQL package installed.
+- Необходимо установить PostgreSQL.
    - On Alpine `$ apk add postgresql-dev`
    - On Ubuntu `$ apt-get install postgresql-server-dev-all`
-   - On Windows : `set(PostgreSQL_INCLUDE_DIR "E:\\program\\Postgresql\\include")`  in **utility/tmp/oatpp-postgresql/CMakeList.txt**
-   
-   For more info see [oatpp-postgresql/README.md](https://github.com/oatpp/oatpp-postgresql/blob/master/README.md)
-- `oatpp`, `oatpp-swagger` and `oatpp-postgresql` modules installed. You may run `utility/install-oatpp-modules.sh` 
-script to install required oatpp modules.   
+   - On Windows : скачать исходники PostgreSQL на официальном сайте и перед скачиванием компонента `oatpp-postgresql` установить значение с адресом к установленной БД `set(PostgreSQL_INCLUDE_DIR "E:\\program\\Postgresql\\include")`  в **utility/tmp/oatpp-postgresql/CMakeList.txt**
+
+-   Должны быть установлены компоненты  `oatpp`, `oatpp-swagger` и `oatpp-postgresql`. Запуск `utility/install-oatpp-modules.sh` или `или utility/gen.bat` загрузит нужные зависимости определенных версий.
 
 ```
 $ mkdir build && cd build
 $ cmake ..
 $ make 
-$ ./EOP_feedback-exe  # - run application.
+$ ./eop_feedback-exe  # - run application.
 ```
 
-*PostgreSQL is expected running as for `dev` config profile*
 
-### In Docker
+### С использованием Docker
 
-#### Dockerfile
+#### Запуск с Dockerfile
 
 ```
 $ docker build -t eop_feedback .
 $ docker run -p 8000:8000 -e CONFIG_PROFILE='dev' -t eop_feedback
 ```
 
-#### docker-compose
+#### Запуск с docker-compose
 
 ```
 $ docker-compose up
@@ -76,7 +73,7 @@ $ docker-compose up
 
 *docker-compose will run service with `local-docker` config profile*
 
-### After run
+### После запуска
 
-Go to [http://localhost:8000/swagger/ui](http://localhost:8000/swagger/ui) to try endpoints.
+Переходим на [http://localhost:8000/swagger/ui](http://localhost:8000/swagger/ui) для просмотра эндпоинтов.
 
