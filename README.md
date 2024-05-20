@@ -1,12 +1,13 @@
 # Сервис обратной связи для курса
 
 Предоставляет АПИ по созданию обратной связи
- ![img.png](img.png)
+![img.png](img.png)
+
 ## Overview
 
 Проект содержит следующие зависимости:
 
-- [oatpp](https://github.com/oatpp/oatpp) 
+- [oatpp](https://github.com/oatpp/oatpp)
 - [oatpp-swagger](https://github.com/oatpp/oatpp-swagger)
 - [oatpp-postgresql](https://github.com/oatpp/oatpp-postgresql)
 
@@ -25,7 +26,10 @@
 |    |- SwaggerComponent.hpp             // Конфигурация для swagger-ui
 |    |- AppComponent.hpp                 // Конфигурация приложения (controllers)
 |    |- DatabaseComponent.hpp            // Конфигурация БД
-|    |- App.cpp                          // main() is here
+|    |- init.cpp                         // Конфигурация приложения
+|    |- init.h                           // Конфигурация приложения
+|    |- init.hpp                         // Конфигурация приложения
+|    |- App.c                            // main() is here
 |    
 |- utility/install-oatpp-modules.sh      // скрпит для скачивания библиотек .
 |- resources/config.json                 // конфигурация подключения к БД, порты, хосты
@@ -39,14 +43,17 @@
 
 ### С использованием CMake
 
-**Требования** 
+**Требования**
 
 - Необходимо установить PostgreSQL.
-   - On Alpine `$ apk add postgresql-dev`
-   - On Ubuntu `$ apt-get install postgresql-server-dev-all`
-   - On Windows : скачать исходники PostgreSQL на официальном сайте и перед скачиванием компонента `oatpp-postgresql` установить значение с адресом к установленной БД `set(PostgreSQL_INCLUDE_DIR "E:\\program\\Postgresql\\include")`  в **utility/tmp/oatpp-postgresql/CMakeList.txt**
+    - On Alpine `$ apk add postgresql-dev`
+    - On Ubuntu `$ apt-get install postgresql-server-dev-all`
+    - On Windows : скачать исходники PostgreSQL на официальном сайте и перед скачиванием компонента `oatpp-postgresql`
+      установить значение с адресом к установленной БД `set(PostgreSQL_INCLUDE_DIR "E:\\program\\Postgresql\\include")`
+      в **utility/tmp/oatpp-postgresql/CMakeList.txt**
 
--   Должны быть установлены компоненты  `oatpp`, `oatpp-swagger` и `oatpp-postgresql`. Запуск `utility/install-oatpp-modules.sh` или `или utility/gen.bat` загрузит нужные зависимости определенных версий.
+- Должны быть установлены компоненты  `oatpp`, `oatpp-swagger` и `oatpp-postgresql`.
+  Запуск `utility/install-oatpp-modules.sh` или `или utility/gen.bat` загрузит нужные зависимости определенных версий.
 
 ```
 $ mkdir build && cd build
@@ -54,7 +61,6 @@ $ cmake ..
 $ make 
 $ ./eop_feedback-exe  # - run application.
 ```
-
 
 ### С использованием Docker
 
