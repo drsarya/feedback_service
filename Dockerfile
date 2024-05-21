@@ -6,7 +6,7 @@ RUN apk add git
 RUN apk add make
 RUN apk add cmake
 
-ADD . /service
+ADD EOP/feedback /service
 
 WORKDIR /service/utility
 

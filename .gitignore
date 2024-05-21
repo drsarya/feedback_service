@@ -36,7 +36,7 @@ build/
 main/build/
 
 # idea
-../.idea/
+.idea/
 cmake-build-debug/
 */cmake-build-debug/
 /.vs/
