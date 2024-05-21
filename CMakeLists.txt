@@ -80,7 +80,7 @@ add_definitions(
 ## add executables
 
 add_executable(${project_name}-exe
-        "EOP/feedback/app/App.c"  )
+        "EOP/feedback/main.c"  )
 target_link_libraries(${project_name}-exe ${project_name}-lib)
 add_dependencies(${project_name}-exe ${project_name}-lib)
 
