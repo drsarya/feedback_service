@@ -25,16 +25,10 @@ https://drive.google.com/file/d/1rKvlu1MWCd0EA4Fs3uhy7h78w8DIJRrl/view?usp=shari
 |    |- db/                              // Компоненты для взаимодействия с БД
 |    |- dto/                             // ДТО
 |    |- service/                         // Сервисы для взаимодействия с БД
-|    |- ServiceComponent.hpp             // Конфигурация компонентов (port, ObjectMapper, Database)
-|    |- SwaggerComponent.hpp             // Конфигурация для swagger-ui
-|    |- AppComponent.hpp                 // Конфигурация приложения (controllers)
-|    |- DatabaseComponent.hpp            // Конфигурация БД
-|    |- init.cpp                         // Конфигурация приложения
-|    |- init.h                           // Конфигурация приложения
-|    |- init.hpp                         // Конфигурация приложения
-|    |- App.c                            // main() is here
+|    |- app/                             // Конфигурация приложения
+|    |- main.c                            // main() is here
 |    
-|- utility/install-oatpp-modules.sh      // скрпит для скачивания библиотек .
+|- utility/install-oatpp-modules.sh      // скрипты для скачивания библиотек sh и bat.
 |- resources/config.json                 // конфигурация подключения к БД, порты, хосты
 |- Dockerfile                            // Dockerfile - сборка сервиса
 |- docker-compose.yaml                   // Docker-compose - сборка сервиса и создание БД
