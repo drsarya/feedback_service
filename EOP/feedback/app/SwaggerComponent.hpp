@@ -1,6 +1,6 @@
 
-#ifndef SwaggerComponent_hpp
-#define SwaggerComponent_hpp
+#ifndef EOP_FEEDBACK_SWAGGERCOMPONENT_HPP
+#define EOP_FEEDBACK_SWAGGERCOMPONENT_HPP
 
 #include <dto/ConfigDto.hpp>
 
@@ -40,4 +40,4 @@ public:
   
 };
 
-#endif /* SwaggerComponent_hpp */
+#endif /* EOP_FEEDBACK_SWAGGERCOMPONENT_HPP */

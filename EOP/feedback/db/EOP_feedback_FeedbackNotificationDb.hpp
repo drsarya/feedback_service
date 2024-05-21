@@ -1,6 +1,6 @@
 
-#ifndef CRUD_FeedbackNotificatonDb_HPP
-#define CRUD_FeedbackNotificatonDb_HPP
+#ifndef EOP_FEEDBACK_FEEDBACKNOTIFICATONDB_HPP
+#define EOP_FEEDBACK_FEEDBACKNOTIFICATONDB_HPP
 
 #include <dto/EOP_feedback_FeedbackNotificationDto.hpp>
 #include <oatpp-postgresql/orm.hpp>
@@ -54,4 +54,4 @@ public:
 
 #include OATPP_CODEGEN_END(DbClient) //<- End Codegen
 
-#endif //CRUD_FEEDBACKNOTIFICATONDB_HPP
+#endif //EOP_FEEDBACK_FEEDBACKNOTIFICATONDB_HPP

@@ -1,5 +1,5 @@
-#ifndef FeedbackDto_hpp
-#define FeedbackDto_hpp
+#ifndef EOP_FEEDBACK_FEEDBACKDTO_HPP
+#define EOP_FEEDBACK_FEEDBACKDTO_HPP
 
 #include <oatpp/core/macro/codegen.hpp>
 #include <oatpp/core/Types.hpp>
@@ -31,4 +31,4 @@ class FeedbackDto : public oatpp::DTO {
 
 #include OATPP_CODEGEN_END(DTO)
 
-#endif /* FeedbackDto_hpp */
+#endif /* EOP_FEEDBACK_FEEDBACKDTO_HPP */

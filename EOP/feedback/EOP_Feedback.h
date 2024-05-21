@@ -1,5 +1,5 @@
-#ifndef Feedback_H
-#define Feedback_H
+#ifndef EOP_FEEDBACK_FEEDBACK_H
+#define EOP_FEEDBACK_FEEDBACK_H
 
 #ifdef __cplusplus
 extern "C" {

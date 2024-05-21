@@ -1,6 +1,6 @@
 
-#ifndef AppComponent_hpp
-#define AppComponent_hpp
+#ifndef EOP_FEEDBACK_APPCOMPONENT_HPP
+#define EOP_FEEDBACK_APPCOMPONENT_HPP
 
 #include <dto/ConfigDto.hpp>
 #include <oatpp/parser/json/mapping/ObjectMapper.hpp>
@@ -52,4 +52,4 @@ public:
 
 };
 
-#endif /* AppComponent_hpp */
+#endif /* EOP_FEEDBACK_APPCOMPONENT_HPP */

@@ -1,9 +1,9 @@
-#ifndef INIT_HPP
-#define INIT_HPP
-#include <AppComponent.hpp>
-#include <DatabaseComponent.hpp>
-#include <ServiceComponent.hpp>
-#include <SwaggerComponent.hpp>
+#ifndef EOP_FEEDBACK_INIT_HPP
+#define EOP_FEEDBACK_INIT_HPP
+#include <app/AppComponent.hpp>
+#include <app/DatabaseComponent.hpp>
+#include <app/ServiceComponent.hpp>
+#include <app/SwaggerComponent.hpp>
 
 #include <oatpp-swagger/Controller.hpp>
 

@@ -1,5 +1,5 @@
-#ifndef INIT_H
-#define INIT_H
+#ifndef EOP_FEEDBACK_INIT_H
+#define EOP_FEEDBACK_INIT_H
 
 
 #ifdef __cplusplus

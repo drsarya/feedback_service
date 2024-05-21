@@ -1,6 +1,6 @@
 
- #ifndef FEEDBACKCONTROLLER_HPP
- #define FEEDBACKCONTROLLER_HPP
+ #ifndef EOP_FEEDBACK_FEEDBACKCONTROLLER_HPP
+ #define EOP_FEEDBACK_FEEDBACKCONTROLLER_HPP
 
  #include <service/EOP_feedback_FeedbackService.hpp>
 
@@ -236,4 +236,4 @@
 
  #include OATPP_CODEGEN_END(ApiController) //<- End Codegen
 
- #endif /* FEEDBACKCONTROLLER_HPP */
+ #endif /* EOP_FEEDBACK_FEEDBACKCONTROLLER_HPP */

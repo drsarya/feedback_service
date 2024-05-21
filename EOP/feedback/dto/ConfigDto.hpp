@@ -1,6 +1,6 @@
 
-#ifndef ConfigDto_hpp
-#define ConfigDto_hpp
+#ifndef EOP_FEEDBACK_CONFIGDTO_HPP
+#define EOP_FEEDBACK_CONFIGDTO_HPP
 
 #include <oatpp/core/Types.hpp>
 #include <oatpp/core/macro/codegen.hpp>
@@ -20,4 +20,4 @@ class ConfigDto : public oatpp::DTO {
 
 #include OATPP_CODEGEN_END(DTO)
 
-#endif /* ConfigDto_hpp */
+#endif /* EOP_FEEDBACK_CONFIGDTO_HPP */

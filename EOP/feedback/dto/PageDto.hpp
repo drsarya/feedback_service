@@ -1,6 +1,6 @@
 
-#ifndef EXAMPLE_POSTGRESQL_PAGEDTO_HPP
-#define EXAMPLE_POSTGRESQL_PAGEDTO_HPP
+#ifndef EOP_FEEDBACK_PAGEDTO_HPP
+#define EOP_FEEDBACK_PAGEDTO_HPP
 #include <dto/EOP_feedback_FeedbackDto.hpp>
 
 #include OATPP_CODEGEN_BEGIN(DTO)
@@ -27,4 +27,4 @@ class FeedbackPageDto : public PageDto<oatpp::Object<FeedbackDto>> {
 
 #include OATPP_CODEGEN_END(DTO)
 
-#endif //EXAMPLE_POSTGRESQL_PAGEDTO_HPP
+#endif //EOP_FEEDBACK_PAGEDTO_HPP

@@ -3,6 +3,9 @@
 Предоставляет АПИ по созданию обратной связи
 ![img.png](img.png)
 
+Видео с работой сервиса:
+https://drive.google.com/file/d/1rKvlu1MWCd0EA4Fs3uhy7h78w8DIJRrl/view?usp=sharing
+
 ## Overview
 
 Проект содержит следующие зависимости:

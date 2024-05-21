@@ -1,6 +1,6 @@
 
-#ifndef CRUD_PUBLIC_FEEDBACKNOTIFICATIONSERVICE_HPP
-#define CRUD_PUBLIC_FEEDBACKNOTIFICATIONSERVICE_HPP
+#ifndef EOP_FEEDBACK_PUBLIC_FEEDBACKNOTIFICATIONSERVICE_HPP
+#define EOP_FEEDBACK_PUBLIC_FEEDBACKNOTIFICATIONSERVICE_HPP
 
 #include <service/EOP_feedback_FeedbackNotificationService.hpp>
 
@@ -12,4 +12,4 @@ public:
 	static void fromDtoToFeedbackNotification(const oatpp::Object<FeedbackNotificationDto>& dto, FeedbackNotification* feedbackNotification);
 };
 
-#endif //CRUD_PUBLIC_FEEDBACKSERVICE_HPP
+#endif //EOP_FEEDBACK_PUBLIC_FEEDBACKNOTIFICATIONSERVICE_HPP

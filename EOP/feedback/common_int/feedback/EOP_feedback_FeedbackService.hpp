@@ -1,6 +1,6 @@
 
-#ifndef CRUD_PUBLIC_FEEDBACKSERVICE_HPP
-#define CRUD_PUBLIC_FEEDBACKSERVICE_HPP
+#ifndef EOP_FEEDBACK_PUBLIC_FEEDBACKSERVICE_HPP
+#define EOP_FEEDBACK_PUBLIC_FEEDBACKSERVICE_HPP
 
 #include <dto/EOP_feedback_FeedbackDto.hpp>
 #include <service/EOP_feedback_FeedbackService.hpp>
@@ -16,5 +16,5 @@ public:
 
 };
 
-#endif //CRUD_PUBLIC_FEEDBACKSERVICE_HPP
+#endif //EOP_FEEDBACK_PUBLIC_FEEDBACKSERVICE_HPP
 

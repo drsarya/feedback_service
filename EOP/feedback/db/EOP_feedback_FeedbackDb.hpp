@@ -1,6 +1,6 @@
 
-#ifndef CRUD_FeedbackDb_HPP
-#define CRUD_FeedbackDb_HPP
+#ifndef EOP_FEEDBACK_FEEDBACKDB_HPP
+#define EOP_FEEDBACK_FEEDBACKDB_HPP
 
 #include <dto/EOP_feedback_FeedbackDto.hpp>
 #include <oatpp-postgresql/orm.hpp>
@@ -110,4 +110,4 @@ public:
 
 #include OATPP_CODEGEN_END(DbClient) //<- End Codegen
 
-#endif //CRUD_FEEDBACKDB_HPP
+#endif //EOP_FEEDBACK_FEEDBACKDB_HPP
