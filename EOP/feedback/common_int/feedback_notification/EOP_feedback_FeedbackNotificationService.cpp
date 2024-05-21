@@ -1,4 +1,4 @@
-#include <common_int/feedback_notification/EOP_feedback_FeedbackNotificationService.h>
+#include <EOP_FeedbackNotification.h>
 #include <common_int/feedback_notification/EOP_feedback_FeedbackNotificationService.hpp>
 
 
